@@ -13,6 +13,8 @@ struct CartasSuperTrunfo
     int populacao;
     float area;
     float pib;
+    float densidade_populacional;
+    float pip_per_capita;
     int pontos_turisticos;
 };
 
@@ -40,6 +42,9 @@ int main() {
     scanf("%f", &carta1.pib);
     printf("Digite o número de pontos turísticos: ");
     scanf("%d", &carta1.pontos_turisticos);
+    carta1.densidade_populacional = carta1.populacao/carta1.area; // Calcula a densidade populacional da carta1
+    carta1.pip_per_capita = carta1.pib/carta1.populacao; // Calcula o PIB per capita da carta1
+
 
     printf("\n---------- Cadastro da carta 2 ----------\n");
     printf("Digite o estado: ");
@@ -56,6 +61,8 @@ int main() {
     scanf("%f", &carta2.pib);
     printf("Digite o número de pontos turísticos: ");
     scanf("%d", &carta2.pontos_turisticos);
+    carta2.densidade_populacional = carta2.populacao/carta2.area; // Calcula a densidade populacional da carta2
+    carta2.pip_per_capita = carta2.pib/carta2.populacao; // Calcula o PIB per capita da carta2
 
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
@@ -68,6 +75,8 @@ int main() {
     printf("\nÁrea: %.2fkm²", carta1.area);
     printf("\nPIB: R$%.2f", carta1.pib);
     printf("\nNúmero de pontos turísticos: %d", carta1.pontos_turisticos);
+    printf("\nDensidade Populacional: %.2fhab/km²", carta1.densidade_populacional);
+    printf("\nPIB per Capita: R$%.2f", carta1.pip_per_capita);
 
     printf("\n\n======= Carta 2 =======");
     printf("\nEstado: %c", carta2.estado);
@@ -76,7 +85,10 @@ int main() {
     printf("\nPopulação: %d habitantes", carta2.populacao);
     printf("\nÁrea: %.2fkm²", carta2.area);
     printf("\nPIB: R$%.2f", carta2.pib);
-    printf("\nNúmero de pontos turísticos: %d\n", carta2.pontos_turisticos);
+    printf("\nNúmero de pontos turísticos: %d", carta2.pontos_turisticos);
+    printf("\nDensidade Populacional: %.2fhab/km²", carta2.densidade_populacional);
+    printf("\nPIB per Capita: R$%.2f", carta2.pip_per_capita);
+    printf("\n");
 
     return 0;
 }
