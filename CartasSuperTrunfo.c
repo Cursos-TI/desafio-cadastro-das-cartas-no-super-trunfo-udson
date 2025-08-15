@@ -7,7 +7,9 @@
 //Teste larissa
 struct CartasSuperTrunfo
 {
-    char codigo_cidade[3];
+    char estado;
+    char codigo_carta[4];
+    char nome_cidade[30];
     int populacao;
     float area;
     float pib;
@@ -24,8 +26,12 @@ int main() {
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     printf("---------- Cadastro da carta 1 ----------\n");
-    printf("Digite o código da cidade: ");
-    scanf("%s", carta1.codigo_cidade);
+    printf("Digite o estado: ");
+    scanf(" %c", &carta1.estado);
+    printf("Digite o código da carta: ");
+    scanf("%s", carta1.codigo_carta);
+    printf("Digite o nome da cidade: ");
+    scanf("%s", carta1.nome_cidade);
     printf("Digite o tamanho da populacao: ");
     scanf("%d", &carta1.populacao);
     printf("Digite a área (km²): ");
@@ -36,8 +42,12 @@ int main() {
     scanf("%d", &carta1.pontos_turisticos);
 
     printf("\n---------- Cadastro da carta 2 ----------\n");
-    printf("Digite o código da cidade: ");
-    scanf("%s", carta2.codigo_cidade);
+    printf("Digite o estado: ");
+    scanf(" %c", &carta2.estado);
+    printf("Digite o código da carta: ");
+    scanf("%s", carta2.codigo_carta);
+    printf("Digite o nome da cidade: ");
+    scanf("%s", carta2.nome_cidade);
     printf("Digite o tamanho da populacao: ");
     scanf("%d", &carta2.populacao);
     printf("Digite a área (km²): ");
@@ -51,18 +61,22 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     printf("\n\n======= Carta 1 =======");
-    printf("\nCódigo da cidade: %s", carta1.codigo_cidade);
+    printf("\nEstado: %c", carta1.estado);
+    printf("\nCódigo da carta: %s", carta1.codigo_carta);
+    printf("\nNome da cidade: %s", carta1.nome_cidade);
     printf("\nPopulação: %d habitantes", carta1.populacao);
     printf("\nÁrea: %.2fkm²", carta1.area);
     printf("\nPIB: R$%.2f", carta1.pib);
     printf("\nNúmero de pontos turísticos: %d", carta1.pontos_turisticos);
 
     printf("\n\n======= Carta 2 =======");
-    printf("\nCódigo da cidade: %s", carta1.codigo_cidade);
+    printf("\nEstado: %c", carta2.estado);
+    printf("\nCódigo da carta: %s", carta2.codigo_carta);
+    printf("\nNome da cidade: %s", carta2.nome_cidade);
     printf("\nPopulação: %d habitantes", carta2.populacao);
     printf("\nÁrea: %.2fkm²", carta2.area);
     printf("\nPIB: R$%.2f", carta2.pib);
-    printf("\nNúmero de pontos turísticos: %d", carta2.pontos_turisticos);
+    printf("\nNúmero de pontos turísticos: %d\n", carta2.pontos_turisticos);
 
     return 0;
 }
